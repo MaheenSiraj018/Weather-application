@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body{
+            background-color: rgb(218, 218, 218);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            height: 40px;
+            width: 98vw;
+            background-color: gray;
+            padding: 15px;
+        }
+
+        .header {
+            margin-top: 20px;
+        }
+
+        .search {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .searchinput {
+            height: 30px;
+            width: 190px;
+        }
+
+        .searchbtn {
+            height: 35px;
+            width: 90px;
+        }
+
+        .clearbtn {
+            height: 35px;
+            width: 90px;
+        }
+
+        .results {
+            margin-top: 30px;
+            display: grid;
+            grid-template-rows: 45vh;
+            grid-template-columns: 30vw 30vw 30vw;
+            grid-gap: 8px;
+            justify-content: center;
+        }
+
+        .wind {
+            grid-column: 1/2;
+            border: 3px solid black;
+            background-color: gray;
+            border-radius: 4px;
+            grid-row: 1/2;
+            padding:20px;
+        }
+
+        .temp {
+            grid-column: 2/3;
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 4px;
+            grid-row: 1/2;
+            padding:20px;
+        }
+
+        .humidity {
+            border: 3px solid black;
+            background-color: gray;
+            border-radius: 4px;
+            grid-column: 3/4;
+            grid-row: 1/2;
+            padding:20px;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 39px;
+        }
+        #tempicon{
+            margin-left: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="search">
+            <input class="searchinput" type="text" placeholder="Type to Search" id="city" maxlength="15">
+            <button class='searchbtn' type="button" onclick="getdata()">Search</button>
+            <button class='clearbtn' type="button" onclick="cleardata()">Clear</button>
+        </div>
+    </nav>
+    <div class="header">
+        <h1>Weather For You</h1>
+    </div>
+    <div class="results">
+        <div class="wind">
+            <h4 id="windspeed"></h4>
+            <h4 id="winddegree"></h4>
+        </div>
+        <div class="temp">
+            <h1 id="citytemp"></h1>
+            <object  data="" type="image/jpeg" id="tempicon"></object>
+            <h4 id="temp"></h4>
+            <h4 id="feelslike"></h4>
+
+        </div>
+        <div class="humidity">
+            <h4 id="humid"></h4>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
